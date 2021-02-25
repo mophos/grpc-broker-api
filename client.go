@@ -6,18 +6,41 @@ import (
 	"log"
 	"os"
 
+	jwt "github.com/form3tech-oss/jwt-go"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/logger"
+	jwtware "github.com/gofiber/jwt/v2"
+	"github.com/jinzhu/gorm"
 	"github.com/joho/godotenv"
 	"github.com/siteslave/grpc-rest-client/proto"
+	"gitlab.com/4-man/grpc-broker-api/database"
+	"gitlab.com/4-man/grpc-broker-api/user"
 	"google.golang.org/grpc"
 )
+
+func initDatabase() {
+	var err error
+	db_host := os.Getenv("DB_HOST")
+	db_port := os.Getenv("DB_PORT")
+	db_user := os.Getenv("DB_USERNAME")
+	db_pass := os.Getenv("DB_PASSWORD")
+	db_name := os.Getenv("DB_NAME")
+	url := db_user + ":" + db_pass + "@tcp(" + db_host + ":" + db_port + ")/" + db_name + "?charset=utf8&parseTime=True"
+	database.DBConn, err = gorm.Open("mysql", url)
+	if err != nil {
+		panic("failed to connect database")
+	}
+	fmt.Println("Connection Opened to Database")
+}
 
 func main() {
 	err := godotenv.Load(".env")
 	if err != nil {
 		fmt.Println("Error loading .env file")
 	}
+
+	initDatabase()
+	defer database.DBConn.Close()
 
 	//hosxpv3
 	urlHosxpv3 := os.Getenv("URL_HOSXPV3")
@@ -49,7 +72,20 @@ func main() {
 
 	app := fiber.New()
 	app.Use(logger.New())
-	app.Post("/patient-info", func(c *fiber.Ctx) error {
+
+	app.Post("/v1/login", user.Login)
+	api := app.Group("api")
+	app.Use(jwtware.New(jwtware.Config{
+		SigningKey: []byte("secret"),
+	}))
+
+	api.Get("/jwt", func(c *fiber.Ctx) error {
+		user := c.Locals("user").(*jwt.Token)
+		claims := user.Claims.(jwt.MapClaims)
+		name := claims["name"].(string)
+		return c.SendString("Welcome " + name)
+	})
+	api.Post("/patient-info", func(c *fiber.Ctx) error {
 		cid := c.FormValue("cid")
 
 		req := &proto.RequestCid{Cid: cid}
@@ -66,7 +102,7 @@ func main() {
 
 	})
 
-	app.Post("/services", func(c *fiber.Ctx) error {
+	api.Post("/services", func(c *fiber.Ctx) error {
 		cid := c.FormValue("cid")
 
 		req := &proto.RequestCid{Cid: cid}
@@ -83,7 +119,7 @@ func main() {
 
 	})
 
-	app.Post("/doctor", func(c *fiber.Ctx) error {
+	api.Post("/doctor", func(c *fiber.Ctx) error {
 		hospcode := c.FormValue("hospcode")
 
 		req := &proto.RequestHospcode{Hospcode: hospcode}
@@ -115,7 +151,7 @@ func main() {
 		// })
 
 	})
-	app.Post("/clinic", func(c *fiber.Ctx) error {
+	api.Post("/clinic", func(c *fiber.Ctx) error {
 		hospcode := c.FormValue("hospcode")
 
 		req := &proto.RequestHospcode{Hospcode: hospcode}
@@ -148,7 +184,7 @@ func main() {
 
 	})
 
-	app.Post("/screening", func(c *fiber.Ctx) error {
+	api.Post("/screening", func(c *fiber.Ctx) error {
 		hospcode := c.FormValue("hospcode")
 		hn := c.FormValue("hn")
 		vn := c.FormValue("vn")
