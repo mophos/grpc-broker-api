@@ -184,7 +184,7 @@ func main() {
 
 	})
 
-	api.Post("/v1/screening", func(c *fiber.Ctx) error {
+	app.Post("/v1/screening", func(c *fiber.Ctx) error {
 		hospcode := c.FormValue("hospcode")
 		hn := c.FormValue("hn")
 		vn := c.FormValue("vn")
@@ -202,6 +202,181 @@ func main() {
 		}
 
 		res3, err3 := clientEmrHosxppcu.GetScreening(context.Background(), req)
+		if err3 != nil {
+			log.Fatalf("open stream error %v", err2)
+		}
+
+		data := append(res.Results, res2.Results...)
+		data = append(data, res3.Results...)
+
+		return c.Status(fiber.StatusOK).JSON(fiber.Map{
+			"results": data,
+		})
+
+		// return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+		// 	"error": err.Error(),
+		// })
+
+	})
+
+	app.Post("/v1/diagnosis", func(c *fiber.Ctx) error {
+		hospcode := c.FormValue("hospcode")
+		hn := c.FormValue("hn")
+		vn := c.FormValue("vn")
+
+		req := &proto.RequestPatient{Hospcode: hospcode, Hn: hn, Vn: vn}
+
+		res, err := clientEmrHosxpv3.GetDiagnosis(context.Background(), req)
+		if err != nil {
+			log.Fatalf("open stream error %v", err)
+		}
+
+		res2, err2 := clientEmrHosxpv4.GetDiagnosis(context.Background(), req)
+		if err2 != nil {
+			log.Fatalf("open stream error %v", err2)
+		}
+
+		res3, err3 := clientEmrHosxppcu.GetDiagnosis(context.Background(), req)
+		if err3 != nil {
+			log.Fatalf("open stream error %v", err2)
+		}
+
+		data := append(res.Results, res2.Results...)
+		data = append(data, res3.Results...)
+
+		return c.Status(fiber.StatusOK).JSON(fiber.Map{
+			"results": data,
+		})
+
+		// return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+		// 	"error": err.Error(),
+		// })
+
+	})
+
+	app.Post("/v1/procedure", func(c *fiber.Ctx) error {
+		hospcode := c.FormValue("hospcode")
+		hn := c.FormValue("hn")
+		vn := c.FormValue("vn")
+
+		req := &proto.RequestPatient{Hospcode: hospcode, Hn: hn, Vn: vn}
+
+		res, err := clientEmrHosxpv3.GetProcedure(context.Background(), req)
+		if err != nil {
+			log.Fatalf("open stream error %v", err)
+		}
+
+		res2, err2 := clientEmrHosxpv4.GetProcedure(context.Background(), req)
+		if err2 != nil {
+			log.Fatalf("open stream error %v", err2)
+		}
+
+		res3, err3 := clientEmrHosxppcu.GetProcedure(context.Background(), req)
+		if err3 != nil {
+			log.Fatalf("open stream error %v", err2)
+		}
+
+		data := append(res.Results, res2.Results...)
+		data = append(data, res3.Results...)
+
+		return c.Status(fiber.StatusOK).JSON(fiber.Map{
+			"results": data,
+		})
+
+		// return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+		// 	"error": err.Error(),
+		// })
+
+	})
+
+	app.Post("/v1/lab", func(c *fiber.Ctx) error {
+		hospcode := c.FormValue("hospcode")
+		hn := c.FormValue("hn")
+		vn := c.FormValue("vn")
+
+		req := &proto.RequestPatient{Hospcode: hospcode, Hn: hn, Vn: vn}
+
+		res, err := clientEmrHosxpv3.GetLab(context.Background(), req)
+		if err != nil {
+			log.Fatalf("open stream error %v", err)
+		}
+
+		res2, err2 := clientEmrHosxpv4.GetLab(context.Background(), req)
+		if err2 != nil {
+			log.Fatalf("open stream error %v", err2)
+		}
+
+		res3, err3 := clientEmrHosxppcu.GetLab(context.Background(), req)
+		if err3 != nil {
+			log.Fatalf("open stream error %v", err2)
+		}
+
+		data := append(res.Results, res2.Results...)
+		data = append(data, res3.Results...)
+
+		return c.Status(fiber.StatusOK).JSON(fiber.Map{
+			"results": data,
+		})
+
+		// return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+		// 	"error": err.Error(),
+		// })
+
+	})
+
+	app.Post("/v1/vaccine", func(c *fiber.Ctx) error {
+		hospcode := c.FormValue("hospcode")
+		hn := c.FormValue("hn")
+		vn := c.FormValue("vn")
+
+		req := &proto.RequestPatient{Hospcode: hospcode, Hn: hn, Vn: vn}
+
+		res, err := clientEmrHosxpv3.GetVaccine(context.Background(), req)
+		if err != nil {
+			log.Fatalf("open stream error %v", err)
+		}
+
+		res2, err2 := clientEmrHosxpv4.GetVaccine(context.Background(), req)
+		if err2 != nil {
+			log.Fatalf("open stream error %v", err2)
+		}
+
+		res3, err3 := clientEmrHosxppcu.GetVaccine(context.Background(), req)
+		if err3 != nil {
+			log.Fatalf("open stream error %v", err2)
+		}
+
+		data := append(res.Results, res2.Results...)
+		data = append(data, res3.Results...)
+
+		return c.Status(fiber.StatusOK).JSON(fiber.Map{
+			"results": data,
+		})
+
+		// return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+		// 	"error": err.Error(),
+		// })
+
+	})
+
+	app.Post("/v1/drug", func(c *fiber.Ctx) error {
+		hospcode := c.FormValue("hospcode")
+		hn := c.FormValue("hn")
+		vn := c.FormValue("vn")
+
+		req := &proto.RequestPatient{Hospcode: hospcode, Hn: hn, Vn: vn}
+
+		res, err := clientEmrHosxpv3.GetDrug(context.Background(), req)
+		if err != nil {
+			log.Fatalf("open stream error %v", err)
+		}
+
+		res2, err2 := clientEmrHosxpv4.GetDrug(context.Background(), req)
+		if err2 != nil {
+			log.Fatalf("open stream error %v", err2)
+		}
+
+		res3, err3 := clientEmrHosxppcu.GetDrug(context.Background(), req)
 		if err3 != nil {
 			log.Fatalf("open stream error %v", err2)
 		}
