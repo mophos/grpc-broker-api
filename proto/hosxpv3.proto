@@ -1,0 +1,108 @@
+syntax = "proto3";
+package proto;
+option go_package = "./proto";
+
+service EmrService {
+  rpc PatientInfo(RequestCid) returns (InfoResponse) {}
+  rpc GetServices(RequestCid) returns (ServiceResponse) {}
+  rpc GetScreening(RequestPatient) returns (ScreeningResponse) {}
+}
+
+service MasterService {
+  rpc DoctorList(RequestHospcode) returns (DoctorResponse) {}
+  rpc ClinicList(RequestHospcode) returns (ClinicResponse) {}
+}
+
+message RequestCid {
+  string cid = 1;
+}
+
+message RequestHospcode {
+  string hospcode = 1;
+}
+
+message RequestPatient {
+  string hn = 1;
+  string vn = 2;
+  string hospcode = 3;
+}
+
+message InfoResponse {
+  message Info {
+  string gw_record_id = 1;
+  string patient_hn = 2;
+  string cid = 3;
+  string gw_hospcode = 4;
+  string pname = 5;
+  string fname = 6;
+  string lname = 7;
+  string birthdate = 8;
+  }
+  repeated Info Results = 2;
+}
+
+message ServiceResponse {
+  message Service {
+  string gw_record_id = 1;
+  string gw_hospcode = 2;
+  string hn = 3;
+  string vn = 4;
+  string vstdate = 5;
+  string vsttime = 6;
+  string pttype = 7;
+  string pttypeno = 8;
+  string spclty = 9;
+  string hospname = 10;
+  }
+  repeated Service Results = 2;
+}
+
+message DoctorResponse {
+  message Doctor {
+    string gw_record_id = 1;
+    string gw_hospcode = 2;
+    string name = 3;
+    string license_no = 4;
+    string cid= 5 ;
+  }
+  repeated Doctor Results = 2;
+}
+
+message DiagnosisResponse {
+  message Diagnosis {
+    string gw_record_id = 1;
+    string gw_hospcode = 2;
+    string hn = 3;
+    string vn = 4;
+    string vstdate = 5;
+    string vsttime = 6;
+    string hospname = 7;
+    string diagename = 8;
+    string diagtname = 9;
+  }
+  repeated Diagnosis Results = 2;
+}
+
+message ClinicResponse {
+  message Clinic {
+    string gw_record_id = 1;
+    string gw_hospcode = 2;
+    string clinic_code = 3;
+    string clinic_name = 4;
+  }
+  repeated Clinic Results = 2;
+}
+
+message ScreeningResponse {
+  message Screening {
+    string gw_record_id = 1;
+    string gw_hospcode = 2;
+    string hn = 3;
+    string vn = 4;
+    string vstdate = 5;
+    string vsttime = 6;
+    string hospname = 7;
+  }
+  repeated Screening Results = 2;
+}
+
