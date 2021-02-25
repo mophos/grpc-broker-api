@@ -107,6 +107,38 @@ func main() {
 		// })
 
 	})
+	app.Post("/clinic", func(c *fiber.Ctx) error {
+		hospcode := c.FormValue("hospcode")
+
+		req := &proto.RequestHospcode{Hospcode: hospcode}
+
+		res, err := clientMasterHosxpv3.ClinicList(context.Background(), req)
+		if err != nil {
+			log.Fatalf("open stream error %v", err)
+		}
+
+		res2, err2 := clientMasterHosxpv4.ClinicList(context.Background(), req)
+		if err2 != nil {
+			log.Fatalf("open stream error %v", err2)
+		}
+
+		res3, err3 := clientMasterHosxppcu.ClinicList(context.Background(), req)
+		if err3 != nil {
+			log.Fatalf("open stream error %v", err2)
+		}
+
+		data := append(res.Results, res2.Results...)
+		data = append(data, res3.Results...)
+
+		return c.Status(fiber.StatusOK).JSON(fiber.Map{
+			"results": data,
+		})
+
+		// return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+		// 	"error": err.Error(),
+		// })
+
+	})
 
 	log.Fatal(app.Listen(":3003"))
 }
