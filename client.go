@@ -12,9 +12,9 @@ import (
 	jwtware "github.com/gofiber/jwt/v2"
 	"github.com/jinzhu/gorm"
 	"github.com/joho/godotenv"
-	"github.com/siteslave/grpc-rest-client/proto"
-	"gitlab.com/4-man/grpc-broker-api/database"
-	"gitlab.com/4-man/grpc-broker-api/user"
+	"github.com/mophos/grpc-broker-api/database"
+	"github.com/mophos/grpc-broker-api/proto"
+	"github.com/mophos/grpc-broker-api/user"
 	"google.golang.org/grpc"
 )
 
@@ -73,8 +73,8 @@ func main() {
 	app := fiber.New()
 	app.Use(logger.New())
 
-	app.Post("/v1/login", user.Login)
 	api := app.Group("api")
+	api.Post("/v1/login", user.Login)
 	app.Use(jwtware.New(jwtware.Config{
 		SigningKey: []byte("secret"),
 	}))
@@ -85,7 +85,7 @@ func main() {
 		name := claims["name"].(string)
 		return c.SendString("Welcome " + name)
 	})
-	api.Post("/patient-info", func(c *fiber.Ctx) error {
+	api.Post("/v1/patient-info", func(c *fiber.Ctx) error {
 		cid := c.FormValue("cid")
 
 		req := &proto.RequestCid{Cid: cid}
@@ -102,7 +102,7 @@ func main() {
 
 	})
 
-	api.Post("/services", func(c *fiber.Ctx) error {
+	api.Post("/v1/services", func(c *fiber.Ctx) error {
 		cid := c.FormValue("cid")
 
 		req := &proto.RequestCid{Cid: cid}
@@ -119,7 +119,7 @@ func main() {
 
 	})
 
-	api.Post("/doctor", func(c *fiber.Ctx) error {
+	api.Post("/v1/doctor", func(c *fiber.Ctx) error {
 		hospcode := c.FormValue("hospcode")
 
 		req := &proto.RequestHospcode{Hospcode: hospcode}
@@ -151,7 +151,7 @@ func main() {
 		// })
 
 	})
-	api.Post("/clinic", func(c *fiber.Ctx) error {
+	api.Post("/v1/clinic", func(c *fiber.Ctx) error {
 		hospcode := c.FormValue("hospcode")
 
 		req := &proto.RequestHospcode{Hospcode: hospcode}
@@ -184,7 +184,7 @@ func main() {
 
 	})
 
-	api.Post("/screening", func(c *fiber.Ctx) error {
+	api.Post("/v1/screening", func(c *fiber.Ctx) error {
 		hospcode := c.FormValue("hospcode")
 		hn := c.FormValue("hn")
 		vn := c.FormValue("vn")

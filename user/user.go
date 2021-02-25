@@ -9,7 +9,7 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-	"github.com/siteslave/demo-fiber/database"
+	"github.com/mophos/grpc-broker-api/database"
 	"golang.org/x/crypto/bcrypt"
 )
 
