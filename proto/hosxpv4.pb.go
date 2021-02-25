@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.25.0-devel
 // 	protoc        v3.14.0
-// source: proto/hosxpv3.proto
+// source: proto/hosxpv4.proto
 
 package proto
 
@@ -31,7 +31,7 @@ type RequestCid struct {
 func (x *RequestCid) Reset() {
 	*x = RequestCid{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_hosxpv3_proto_msgTypes[0]
+		mi := &file_proto_hosxpv4_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -44,7 +44,7 @@ func (x *RequestCid) String() string {
 func (*RequestCid) ProtoMessage() {}
 
 func (x *RequestCid) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_hosxpv3_proto_msgTypes[0]
+	mi := &file_proto_hosxpv4_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -57,7 +57,7 @@ func (x *RequestCid) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RequestCid.ProtoReflect.Descriptor instead.
 func (*RequestCid) Descriptor() ([]byte, []int) {
-	return file_proto_hosxpv3_proto_rawDescGZIP(), []int{0}
+	return file_proto_hosxpv4_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *RequestCid) GetCid() string {
@@ -78,7 +78,7 @@ type RequestHospcode struct {
 func (x *RequestHospcode) Reset() {
 	*x = RequestHospcode{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_hosxpv3_proto_msgTypes[1]
+		mi := &file_proto_hosxpv4_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -91,7 +91,7 @@ func (x *RequestHospcode) String() string {
 func (*RequestHospcode) ProtoMessage() {}
 
 func (x *RequestHospcode) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_hosxpv3_proto_msgTypes[1]
+	mi := &file_proto_hosxpv4_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -104,7 +104,7 @@ func (x *RequestHospcode) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RequestHospcode.ProtoReflect.Descriptor instead.
 func (*RequestHospcode) Descriptor() ([]byte, []int) {
-	return file_proto_hosxpv3_proto_rawDescGZIP(), []int{1}
+	return file_proto_hosxpv4_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *RequestHospcode) GetHospcode() string {
@@ -127,7 +127,7 @@ type RequestPatient struct {
 func (x *RequestPatient) Reset() {
 	*x = RequestPatient{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_hosxpv3_proto_msgTypes[2]
+		mi := &file_proto_hosxpv4_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -140,7 +140,7 @@ func (x *RequestPatient) String() string {
 func (*RequestPatient) ProtoMessage() {}
 
 func (x *RequestPatient) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_hosxpv3_proto_msgTypes[2]
+	mi := &file_proto_hosxpv4_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -153,7 +153,7 @@ func (x *RequestPatient) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RequestPatient.ProtoReflect.Descriptor instead.
 func (*RequestPatient) Descriptor() ([]byte, []int) {
-	return file_proto_hosxpv3_proto_rawDescGZIP(), []int{2}
+	return file_proto_hosxpv4_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *RequestPatient) GetHn() string {
@@ -188,7 +188,7 @@ type InfoResponse struct {
 func (x *InfoResponse) Reset() {
 	*x = InfoResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_hosxpv3_proto_msgTypes[3]
+		mi := &file_proto_hosxpv4_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -201,7 +201,7 @@ func (x *InfoResponse) String() string {
 func (*InfoResponse) ProtoMessage() {}
 
 func (x *InfoResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_hosxpv3_proto_msgTypes[3]
+	mi := &file_proto_hosxpv4_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -214,7 +214,7 @@ func (x *InfoResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InfoResponse.ProtoReflect.Descriptor instead.
 func (*InfoResponse) Descriptor() ([]byte, []int) {
-	return file_proto_hosxpv3_proto_rawDescGZIP(), []int{3}
+	return file_proto_hosxpv4_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *InfoResponse) GetResults() []*InfoResponse_Info {
@@ -235,7 +235,7 @@ type ServiceResponse struct {
 func (x *ServiceResponse) Reset() {
 	*x = ServiceResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_hosxpv3_proto_msgTypes[4]
+		mi := &file_proto_hosxpv4_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -248,7 +248,7 @@ func (x *ServiceResponse) String() string {
 func (*ServiceResponse) ProtoMessage() {}
 
 func (x *ServiceResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_hosxpv3_proto_msgTypes[4]
+	mi := &file_proto_hosxpv4_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -261,7 +261,7 @@ func (x *ServiceResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ServiceResponse.ProtoReflect.Descriptor instead.
 func (*ServiceResponse) Descriptor() ([]byte, []int) {
-	return file_proto_hosxpv3_proto_rawDescGZIP(), []int{4}
+	return file_proto_hosxpv4_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *ServiceResponse) GetResults() []*ServiceResponse_Service {
@@ -282,7 +282,7 @@ type DoctorResponse struct {
 func (x *DoctorResponse) Reset() {
 	*x = DoctorResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_hosxpv3_proto_msgTypes[5]
+		mi := &file_proto_hosxpv4_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -295,7 +295,7 @@ func (x *DoctorResponse) String() string {
 func (*DoctorResponse) ProtoMessage() {}
 
 func (x *DoctorResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_hosxpv3_proto_msgTypes[5]
+	mi := &file_proto_hosxpv4_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -308,7 +308,7 @@ func (x *DoctorResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DoctorResponse.ProtoReflect.Descriptor instead.
 func (*DoctorResponse) Descriptor() ([]byte, []int) {
-	return file_proto_hosxpv3_proto_rawDescGZIP(), []int{5}
+	return file_proto_hosxpv4_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *DoctorResponse) GetResults() []*DoctorResponse_Doctor {
@@ -329,7 +329,7 @@ type DiagnosisResponse struct {
 func (x *DiagnosisResponse) Reset() {
 	*x = DiagnosisResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_hosxpv3_proto_msgTypes[6]
+		mi := &file_proto_hosxpv4_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -342,7 +342,7 @@ func (x *DiagnosisResponse) String() string {
 func (*DiagnosisResponse) ProtoMessage() {}
 
 func (x *DiagnosisResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_hosxpv3_proto_msgTypes[6]
+	mi := &file_proto_hosxpv4_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -355,7 +355,7 @@ func (x *DiagnosisResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DiagnosisResponse.ProtoReflect.Descriptor instead.
 func (*DiagnosisResponse) Descriptor() ([]byte, []int) {
-	return file_proto_hosxpv3_proto_rawDescGZIP(), []int{6}
+	return file_proto_hosxpv4_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *DiagnosisResponse) GetResults() []*DiagnosisResponse_Diagnosis {
@@ -376,7 +376,7 @@ type ClinicResponse struct {
 func (x *ClinicResponse) Reset() {
 	*x = ClinicResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_hosxpv3_proto_msgTypes[7]
+		mi := &file_proto_hosxpv4_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -389,7 +389,7 @@ func (x *ClinicResponse) String() string {
 func (*ClinicResponse) ProtoMessage() {}
 
 func (x *ClinicResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_hosxpv3_proto_msgTypes[7]
+	mi := &file_proto_hosxpv4_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -402,7 +402,7 @@ func (x *ClinicResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ClinicResponse.ProtoReflect.Descriptor instead.
 func (*ClinicResponse) Descriptor() ([]byte, []int) {
-	return file_proto_hosxpv3_proto_rawDescGZIP(), []int{7}
+	return file_proto_hosxpv4_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *ClinicResponse) GetResults() []*ClinicResponse_Clinic {
@@ -423,7 +423,7 @@ type ScreeningResponse struct {
 func (x *ScreeningResponse) Reset() {
 	*x = ScreeningResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_hosxpv3_proto_msgTypes[8]
+		mi := &file_proto_hosxpv4_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -436,7 +436,7 @@ func (x *ScreeningResponse) String() string {
 func (*ScreeningResponse) ProtoMessage() {}
 
 func (x *ScreeningResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_hosxpv3_proto_msgTypes[8]
+	mi := &file_proto_hosxpv4_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -449,7 +449,7 @@ func (x *ScreeningResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ScreeningResponse.ProtoReflect.Descriptor instead.
 func (*ScreeningResponse) Descriptor() ([]byte, []int) {
-	return file_proto_hosxpv3_proto_rawDescGZIP(), []int{8}
+	return file_proto_hosxpv4_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *ScreeningResponse) GetResults() []*ScreeningResponse_Screening {
@@ -470,7 +470,7 @@ type ProcedureResponse struct {
 func (x *ProcedureResponse) Reset() {
 	*x = ProcedureResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_hosxpv3_proto_msgTypes[9]
+		mi := &file_proto_hosxpv4_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -483,7 +483,7 @@ func (x *ProcedureResponse) String() string {
 func (*ProcedureResponse) ProtoMessage() {}
 
 func (x *ProcedureResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_hosxpv3_proto_msgTypes[9]
+	mi := &file_proto_hosxpv4_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -496,7 +496,7 @@ func (x *ProcedureResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProcedureResponse.ProtoReflect.Descriptor instead.
 func (*ProcedureResponse) Descriptor() ([]byte, []int) {
-	return file_proto_hosxpv3_proto_rawDescGZIP(), []int{9}
+	return file_proto_hosxpv4_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *ProcedureResponse) GetResults() []*ProcedureResponse_Procedure {
@@ -517,7 +517,7 @@ type LabResponse struct {
 func (x *LabResponse) Reset() {
 	*x = LabResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_hosxpv3_proto_msgTypes[10]
+		mi := &file_proto_hosxpv4_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -530,7 +530,7 @@ func (x *LabResponse) String() string {
 func (*LabResponse) ProtoMessage() {}
 
 func (x *LabResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_hosxpv3_proto_msgTypes[10]
+	mi := &file_proto_hosxpv4_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -543,7 +543,7 @@ func (x *LabResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LabResponse.ProtoReflect.Descriptor instead.
 func (*LabResponse) Descriptor() ([]byte, []int) {
-	return file_proto_hosxpv3_proto_rawDescGZIP(), []int{10}
+	return file_proto_hosxpv4_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *LabResponse) GetResults() []*LabResponse_Lab {
@@ -564,7 +564,7 @@ type VaccineResponse struct {
 func (x *VaccineResponse) Reset() {
 	*x = VaccineResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_hosxpv3_proto_msgTypes[11]
+		mi := &file_proto_hosxpv4_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -577,7 +577,7 @@ func (x *VaccineResponse) String() string {
 func (*VaccineResponse) ProtoMessage() {}
 
 func (x *VaccineResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_hosxpv3_proto_msgTypes[11]
+	mi := &file_proto_hosxpv4_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -590,7 +590,7 @@ func (x *VaccineResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use VaccineResponse.ProtoReflect.Descriptor instead.
 func (*VaccineResponse) Descriptor() ([]byte, []int) {
-	return file_proto_hosxpv3_proto_rawDescGZIP(), []int{11}
+	return file_proto_hosxpv4_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *VaccineResponse) GetResults() []*VaccineResponse_Vaccine {
@@ -611,7 +611,7 @@ type DrugResponse struct {
 func (x *DrugResponse) Reset() {
 	*x = DrugResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_hosxpv3_proto_msgTypes[12]
+		mi := &file_proto_hosxpv4_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -624,7 +624,7 @@ func (x *DrugResponse) String() string {
 func (*DrugResponse) ProtoMessage() {}
 
 func (x *DrugResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_hosxpv3_proto_msgTypes[12]
+	mi := &file_proto_hosxpv4_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -637,7 +637,7 @@ func (x *DrugResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DrugResponse.ProtoReflect.Descriptor instead.
 func (*DrugResponse) Descriptor() ([]byte, []int) {
-	return file_proto_hosxpv3_proto_rawDescGZIP(), []int{12}
+	return file_proto_hosxpv4_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *DrugResponse) GetResults() []*DrugResponse_Drug {
@@ -665,7 +665,7 @@ type InfoResponse_Info struct {
 func (x *InfoResponse_Info) Reset() {
 	*x = InfoResponse_Info{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_hosxpv3_proto_msgTypes[13]
+		mi := &file_proto_hosxpv4_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -678,7 +678,7 @@ func (x *InfoResponse_Info) String() string {
 func (*InfoResponse_Info) ProtoMessage() {}
 
 func (x *InfoResponse_Info) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_hosxpv3_proto_msgTypes[13]
+	mi := &file_proto_hosxpv4_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -691,7 +691,7 @@ func (x *InfoResponse_Info) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InfoResponse_Info.ProtoReflect.Descriptor instead.
 func (*InfoResponse_Info) Descriptor() ([]byte, []int) {
-	return file_proto_hosxpv3_proto_rawDescGZIP(), []int{3, 0}
+	return file_proto_hosxpv4_proto_rawDescGZIP(), []int{3, 0}
 }
 
 func (x *InfoResponse_Info) GetGwRecordId() string {
@@ -770,7 +770,7 @@ type ServiceResponse_Service struct {
 func (x *ServiceResponse_Service) Reset() {
 	*x = ServiceResponse_Service{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_hosxpv3_proto_msgTypes[14]
+		mi := &file_proto_hosxpv4_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -783,7 +783,7 @@ func (x *ServiceResponse_Service) String() string {
 func (*ServiceResponse_Service) ProtoMessage() {}
 
 func (x *ServiceResponse_Service) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_hosxpv3_proto_msgTypes[14]
+	mi := &file_proto_hosxpv4_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -796,7 +796,7 @@ func (x *ServiceResponse_Service) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ServiceResponse_Service.ProtoReflect.Descriptor instead.
 func (*ServiceResponse_Service) Descriptor() ([]byte, []int) {
-	return file_proto_hosxpv3_proto_rawDescGZIP(), []int{4, 0}
+	return file_proto_hosxpv4_proto_rawDescGZIP(), []int{4, 0}
 }
 
 func (x *ServiceResponse_Service) GetGwRecordId() string {
@@ -884,7 +884,7 @@ type DoctorResponse_Doctor struct {
 func (x *DoctorResponse_Doctor) Reset() {
 	*x = DoctorResponse_Doctor{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_hosxpv3_proto_msgTypes[15]
+		mi := &file_proto_hosxpv4_proto_msgTypes[15]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -897,7 +897,7 @@ func (x *DoctorResponse_Doctor) String() string {
 func (*DoctorResponse_Doctor) ProtoMessage() {}
 
 func (x *DoctorResponse_Doctor) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_hosxpv3_proto_msgTypes[15]
+	mi := &file_proto_hosxpv4_proto_msgTypes[15]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -910,7 +910,7 @@ func (x *DoctorResponse_Doctor) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DoctorResponse_Doctor.ProtoReflect.Descriptor instead.
 func (*DoctorResponse_Doctor) Descriptor() ([]byte, []int) {
-	return file_proto_hosxpv3_proto_rawDescGZIP(), []int{5, 0}
+	return file_proto_hosxpv4_proto_rawDescGZIP(), []int{5, 0}
 }
 
 func (x *DoctorResponse_Doctor) GetGwRecordId() string {
@@ -967,7 +967,7 @@ type DiagnosisResponse_Diagnosis struct {
 func (x *DiagnosisResponse_Diagnosis) Reset() {
 	*x = DiagnosisResponse_Diagnosis{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_hosxpv3_proto_msgTypes[16]
+		mi := &file_proto_hosxpv4_proto_msgTypes[16]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -980,7 +980,7 @@ func (x *DiagnosisResponse_Diagnosis) String() string {
 func (*DiagnosisResponse_Diagnosis) ProtoMessage() {}
 
 func (x *DiagnosisResponse_Diagnosis) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_hosxpv3_proto_msgTypes[16]
+	mi := &file_proto_hosxpv4_proto_msgTypes[16]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -993,7 +993,7 @@ func (x *DiagnosisResponse_Diagnosis) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DiagnosisResponse_Diagnosis.ProtoReflect.Descriptor instead.
 func (*DiagnosisResponse_Diagnosis) Descriptor() ([]byte, []int) {
-	return file_proto_hosxpv3_proto_rawDescGZIP(), []int{6, 0}
+	return file_proto_hosxpv4_proto_rawDescGZIP(), []int{6, 0}
 }
 
 func (x *DiagnosisResponse_Diagnosis) GetGwRecordId() string {
@@ -1073,7 +1073,7 @@ type ClinicResponse_Clinic struct {
 func (x *ClinicResponse_Clinic) Reset() {
 	*x = ClinicResponse_Clinic{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_hosxpv3_proto_msgTypes[17]
+		mi := &file_proto_hosxpv4_proto_msgTypes[17]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1086,7 +1086,7 @@ func (x *ClinicResponse_Clinic) String() string {
 func (*ClinicResponse_Clinic) ProtoMessage() {}
 
 func (x *ClinicResponse_Clinic) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_hosxpv3_proto_msgTypes[17]
+	mi := &file_proto_hosxpv4_proto_msgTypes[17]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1099,7 +1099,7 @@ func (x *ClinicResponse_Clinic) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ClinicResponse_Clinic.ProtoReflect.Descriptor instead.
 func (*ClinicResponse_Clinic) Descriptor() ([]byte, []int) {
-	return file_proto_hosxpv3_proto_rawDescGZIP(), []int{7, 0}
+	return file_proto_hosxpv4_proto_rawDescGZIP(), []int{7, 0}
 }
 
 func (x *ClinicResponse_Clinic) GetGwRecordId() string {
@@ -1147,7 +1147,7 @@ type ScreeningResponse_Screening struct {
 func (x *ScreeningResponse_Screening) Reset() {
 	*x = ScreeningResponse_Screening{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_hosxpv3_proto_msgTypes[18]
+		mi := &file_proto_hosxpv4_proto_msgTypes[18]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1160,7 +1160,7 @@ func (x *ScreeningResponse_Screening) String() string {
 func (*ScreeningResponse_Screening) ProtoMessage() {}
 
 func (x *ScreeningResponse_Screening) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_hosxpv3_proto_msgTypes[18]
+	mi := &file_proto_hosxpv4_proto_msgTypes[18]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1173,7 +1173,7 @@ func (x *ScreeningResponse_Screening) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ScreeningResponse_Screening.ProtoReflect.Descriptor instead.
 func (*ScreeningResponse_Screening) Descriptor() ([]byte, []int) {
-	return file_proto_hosxpv3_proto_rawDescGZIP(), []int{8, 0}
+	return file_proto_hosxpv4_proto_rawDescGZIP(), []int{8, 0}
 }
 
 func (x *ScreeningResponse_Screening) GetGwRecordId() string {
@@ -1244,7 +1244,7 @@ type ProcedureResponse_Procedure struct {
 func (x *ProcedureResponse_Procedure) Reset() {
 	*x = ProcedureResponse_Procedure{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_hosxpv3_proto_msgTypes[19]
+		mi := &file_proto_hosxpv4_proto_msgTypes[19]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1257,7 +1257,7 @@ func (x *ProcedureResponse_Procedure) String() string {
 func (*ProcedureResponse_Procedure) ProtoMessage() {}
 
 func (x *ProcedureResponse_Procedure) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_hosxpv3_proto_msgTypes[19]
+	mi := &file_proto_hosxpv4_proto_msgTypes[19]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1270,7 +1270,7 @@ func (x *ProcedureResponse_Procedure) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ProcedureResponse_Procedure.ProtoReflect.Descriptor instead.
 func (*ProcedureResponse_Procedure) Descriptor() ([]byte, []int) {
-	return file_proto_hosxpv3_proto_rawDescGZIP(), []int{9, 0}
+	return file_proto_hosxpv4_proto_rawDescGZIP(), []int{9, 0}
 }
 
 func (x *ProcedureResponse_Procedure) GetGwRecordId() string {
@@ -1357,7 +1357,7 @@ type LabResponse_Lab struct {
 func (x *LabResponse_Lab) Reset() {
 	*x = LabResponse_Lab{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_hosxpv3_proto_msgTypes[20]
+		mi := &file_proto_hosxpv4_proto_msgTypes[20]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1370,7 +1370,7 @@ func (x *LabResponse_Lab) String() string {
 func (*LabResponse_Lab) ProtoMessage() {}
 
 func (x *LabResponse_Lab) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_hosxpv3_proto_msgTypes[20]
+	mi := &file_proto_hosxpv4_proto_msgTypes[20]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1383,7 +1383,7 @@ func (x *LabResponse_Lab) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LabResponse_Lab.ProtoReflect.Descriptor instead.
 func (*LabResponse_Lab) Descriptor() ([]byte, []int) {
-	return file_proto_hosxpv3_proto_rawDescGZIP(), []int{10, 0}
+	return file_proto_hosxpv4_proto_rawDescGZIP(), []int{10, 0}
 }
 
 func (x *LabResponse_Lab) GetGwRecordId() string {
@@ -1479,7 +1479,7 @@ type VaccineResponse_Vaccine struct {
 func (x *VaccineResponse_Vaccine) Reset() {
 	*x = VaccineResponse_Vaccine{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_hosxpv3_proto_msgTypes[21]
+		mi := &file_proto_hosxpv4_proto_msgTypes[21]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1492,7 +1492,7 @@ func (x *VaccineResponse_Vaccine) String() string {
 func (*VaccineResponse_Vaccine) ProtoMessage() {}
 
 func (x *VaccineResponse_Vaccine) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_hosxpv3_proto_msgTypes[21]
+	mi := &file_proto_hosxpv4_proto_msgTypes[21]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1505,7 +1505,7 @@ func (x *VaccineResponse_Vaccine) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use VaccineResponse_Vaccine.ProtoReflect.Descriptor instead.
 func (*VaccineResponse_Vaccine) Descriptor() ([]byte, []int) {
-	return file_proto_hosxpv3_proto_rawDescGZIP(), []int{11, 0}
+	return file_proto_hosxpv4_proto_rawDescGZIP(), []int{11, 0}
 }
 
 func (x *VaccineResponse_Vaccine) GetGwRecordId() string {
@@ -1570,7 +1570,7 @@ type DrugResponse_Drug struct {
 func (x *DrugResponse_Drug) Reset() {
 	*x = DrugResponse_Drug{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_proto_hosxpv3_proto_msgTypes[22]
+		mi := &file_proto_hosxpv4_proto_msgTypes[22]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -1583,7 +1583,7 @@ func (x *DrugResponse_Drug) String() string {
 func (*DrugResponse_Drug) ProtoMessage() {}
 
 func (x *DrugResponse_Drug) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_hosxpv3_proto_msgTypes[22]
+	mi := &file_proto_hosxpv4_proto_msgTypes[22]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1596,7 +1596,7 @@ func (x *DrugResponse_Drug) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DrugResponse_Drug.ProtoReflect.Descriptor instead.
 func (*DrugResponse_Drug) Descriptor() ([]byte, []int) {
-	return file_proto_hosxpv3_proto_rawDescGZIP(), []int{12, 0}
+	return file_proto_hosxpv4_proto_rawDescGZIP(), []int{12, 0}
 }
 
 func (x *DrugResponse_Drug) GetGwRecordId() string {
@@ -1669,10 +1669,10 @@ func (x *DrugResponse_Drug) GetHospname() string {
 	return ""
 }
 
-var File_proto_hosxpv3_proto protoreflect.FileDescriptor
+var File_proto_hosxpv4_proto protoreflect.FileDescriptor
 
-var file_proto_hosxpv3_proto_rawDesc = []byte{
-	0x0a, 0x13, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x68, 0x6f, 0x73, 0x78, 0x70, 0x76, 0x33, 0x2e,
+var file_proto_hosxpv4_proto_rawDesc = []byte{
+	0x0a, 0x13, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2f, 0x68, 0x6f, 0x73, 0x78, 0x70, 0x76, 0x34, 0x2e,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x05, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x1e, 0x0a, 0x0a,
 	0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x43, 0x69, 0x64, 0x12, 0x10, 0x0a, 0x03, 0x63, 0x69,
 	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x63, 0x69, 0x64, 0x22, 0x2d, 0x0a, 0x0f,
@@ -1922,19 +1922,19 @@ var file_proto_hosxpv3_proto_rawDesc = []byte{
 }
 
 var (
-	file_proto_hosxpv3_proto_rawDescOnce sync.Once
-	file_proto_hosxpv3_proto_rawDescData = file_proto_hosxpv3_proto_rawDesc
+	file_proto_hosxpv4_proto_rawDescOnce sync.Once
+	file_proto_hosxpv4_proto_rawDescData = file_proto_hosxpv4_proto_rawDesc
 )
 
-func file_proto_hosxpv3_proto_rawDescGZIP() []byte {
-	file_proto_hosxpv3_proto_rawDescOnce.Do(func() {
-		file_proto_hosxpv3_proto_rawDescData = protoimpl.X.CompressGZIP(file_proto_hosxpv3_proto_rawDescData)
+func file_proto_hosxpv4_proto_rawDescGZIP() []byte {
+	file_proto_hosxpv4_proto_rawDescOnce.Do(func() {
+		file_proto_hosxpv4_proto_rawDescData = protoimpl.X.CompressGZIP(file_proto_hosxpv4_proto_rawDescData)
 	})
-	return file_proto_hosxpv3_proto_rawDescData
+	return file_proto_hosxpv4_proto_rawDescData
 }
 
-var file_proto_hosxpv3_proto_msgTypes = make([]protoimpl.MessageInfo, 23)
-var file_proto_hosxpv3_proto_goTypes = []interface{}{
+var file_proto_hosxpv4_proto_msgTypes = make([]protoimpl.MessageInfo, 23)
+var file_proto_hosxpv4_proto_goTypes = []interface{}{
 	(*RequestCid)(nil),                  // 0: proto.RequestCid
 	(*RequestHospcode)(nil),             // 1: proto.RequestHospcode
 	(*RequestPatient)(nil),              // 2: proto.RequestPatient
@@ -1959,7 +1959,7 @@ var file_proto_hosxpv3_proto_goTypes = []interface{}{
 	(*VaccineResponse_Vaccine)(nil),     // 21: proto.VaccineResponse.Vaccine
 	(*DrugResponse_Drug)(nil),           // 22: proto.DrugResponse.Drug
 }
-var file_proto_hosxpv3_proto_depIdxs = []int32{
+var file_proto_hosxpv4_proto_depIdxs = []int32{
 	13, // 0: proto.InfoResponse.Results:type_name -> proto.InfoResponse.Info
 	14, // 1: proto.ServiceResponse.Results:type_name -> proto.ServiceResponse.Service
 	15, // 2: proto.DoctorResponse.Results:type_name -> proto.DoctorResponse.Doctor
@@ -1997,13 +1997,13 @@ var file_proto_hosxpv3_proto_depIdxs = []int32{
 	0,  // [0:10] is the sub-list for field type_name
 }
 
-func init() { file_proto_hosxpv3_proto_init() }
-func file_proto_hosxpv3_proto_init() {
-	if File_proto_hosxpv3_proto != nil {
+func init() { file_proto_hosxpv4_proto_init() }
+func file_proto_hosxpv4_proto_init() {
+	if File_proto_hosxpv4_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_proto_hosxpv3_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_hosxpv4_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RequestCid); i {
 			case 0:
 				return &v.state
@@ -2015,7 +2015,7 @@ func file_proto_hosxpv3_proto_init() {
 				return nil
 			}
 		}
-		file_proto_hosxpv3_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_hosxpv4_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RequestHospcode); i {
 			case 0:
 				return &v.state
@@ -2027,7 +2027,7 @@ func file_proto_hosxpv3_proto_init() {
 				return nil
 			}
 		}
-		file_proto_hosxpv3_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_hosxpv4_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*RequestPatient); i {
 			case 0:
 				return &v.state
@@ -2039,7 +2039,7 @@ func file_proto_hosxpv3_proto_init() {
 				return nil
 			}
 		}
-		file_proto_hosxpv3_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_hosxpv4_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*InfoResponse); i {
 			case 0:
 				return &v.state
@@ -2051,7 +2051,7 @@ func file_proto_hosxpv3_proto_init() {
 				return nil
 			}
 		}
-		file_proto_hosxpv3_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_hosxpv4_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ServiceResponse); i {
 			case 0:
 				return &v.state
@@ -2063,7 +2063,7 @@ func file_proto_hosxpv3_proto_init() {
 				return nil
 			}
 		}
-		file_proto_hosxpv3_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_hosxpv4_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DoctorResponse); i {
 			case 0:
 				return &v.state
@@ -2075,7 +2075,7 @@ func file_proto_hosxpv3_proto_init() {
 				return nil
 			}
 		}
-		file_proto_hosxpv3_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_hosxpv4_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DiagnosisResponse); i {
 			case 0:
 				return &v.state
@@ -2087,7 +2087,7 @@ func file_proto_hosxpv3_proto_init() {
 				return nil
 			}
 		}
-		file_proto_hosxpv3_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_hosxpv4_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ClinicResponse); i {
 			case 0:
 				return &v.state
@@ -2099,7 +2099,7 @@ func file_proto_hosxpv3_proto_init() {
 				return nil
 			}
 		}
-		file_proto_hosxpv3_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_hosxpv4_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ScreeningResponse); i {
 			case 0:
 				return &v.state
@@ -2111,7 +2111,7 @@ func file_proto_hosxpv3_proto_init() {
 				return nil
 			}
 		}
-		file_proto_hosxpv3_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_hosxpv4_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ProcedureResponse); i {
 			case 0:
 				return &v.state
@@ -2123,7 +2123,7 @@ func file_proto_hosxpv3_proto_init() {
 				return nil
 			}
 		}
-		file_proto_hosxpv3_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_hosxpv4_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LabResponse); i {
 			case 0:
 				return &v.state
@@ -2135,7 +2135,7 @@ func file_proto_hosxpv3_proto_init() {
 				return nil
 			}
 		}
-		file_proto_hosxpv3_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_hosxpv4_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*VaccineResponse); i {
 			case 0:
 				return &v.state
@@ -2147,7 +2147,7 @@ func file_proto_hosxpv3_proto_init() {
 				return nil
 			}
 		}
-		file_proto_hosxpv3_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_hosxpv4_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DrugResponse); i {
 			case 0:
 				return &v.state
@@ -2159,7 +2159,7 @@ func file_proto_hosxpv3_proto_init() {
 				return nil
 			}
 		}
-		file_proto_hosxpv3_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_hosxpv4_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*InfoResponse_Info); i {
 			case 0:
 				return &v.state
@@ -2171,7 +2171,7 @@ func file_proto_hosxpv3_proto_init() {
 				return nil
 			}
 		}
-		file_proto_hosxpv3_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_hosxpv4_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ServiceResponse_Service); i {
 			case 0:
 				return &v.state
@@ -2183,7 +2183,7 @@ func file_proto_hosxpv3_proto_init() {
 				return nil
 			}
 		}
-		file_proto_hosxpv3_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_hosxpv4_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DoctorResponse_Doctor); i {
 			case 0:
 				return &v.state
@@ -2195,7 +2195,7 @@ func file_proto_hosxpv3_proto_init() {
 				return nil
 			}
 		}
-		file_proto_hosxpv3_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_hosxpv4_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DiagnosisResponse_Diagnosis); i {
 			case 0:
 				return &v.state
@@ -2207,7 +2207,7 @@ func file_proto_hosxpv3_proto_init() {
 				return nil
 			}
 		}
-		file_proto_hosxpv3_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_hosxpv4_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ClinicResponse_Clinic); i {
 			case 0:
 				return &v.state
@@ -2219,7 +2219,7 @@ func file_proto_hosxpv3_proto_init() {
 				return nil
 			}
 		}
-		file_proto_hosxpv3_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_hosxpv4_proto_msgTypes[18].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ScreeningResponse_Screening); i {
 			case 0:
 				return &v.state
@@ -2231,7 +2231,7 @@ func file_proto_hosxpv3_proto_init() {
 				return nil
 			}
 		}
-		file_proto_hosxpv3_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_hosxpv4_proto_msgTypes[19].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ProcedureResponse_Procedure); i {
 			case 0:
 				return &v.state
@@ -2243,7 +2243,7 @@ func file_proto_hosxpv3_proto_init() {
 				return nil
 			}
 		}
-		file_proto_hosxpv3_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_hosxpv4_proto_msgTypes[20].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*LabResponse_Lab); i {
 			case 0:
 				return &v.state
@@ -2255,7 +2255,7 @@ func file_proto_hosxpv3_proto_init() {
 				return nil
 			}
 		}
-		file_proto_hosxpv3_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_hosxpv4_proto_msgTypes[21].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*VaccineResponse_Vaccine); i {
 			case 0:
 				return &v.state
@@ -2267,7 +2267,7 @@ func file_proto_hosxpv3_proto_init() {
 				return nil
 			}
 		}
-		file_proto_hosxpv3_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
+		file_proto_hosxpv4_proto_msgTypes[22].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DrugResponse_Drug); i {
 			case 0:
 				return &v.state
@@ -2284,18 +2284,18 @@ func file_proto_hosxpv3_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_proto_hosxpv3_proto_rawDesc,
+			RawDescriptor: file_proto_hosxpv4_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   23,
 			NumExtensions: 0,
 			NumServices:   2,
 		},
-		GoTypes:           file_proto_hosxpv3_proto_goTypes,
-		DependencyIndexes: file_proto_hosxpv3_proto_depIdxs,
-		MessageInfos:      file_proto_hosxpv3_proto_msgTypes,
+		GoTypes:           file_proto_hosxpv4_proto_goTypes,
+		DependencyIndexes: file_proto_hosxpv4_proto_depIdxs,
+		MessageInfos:      file_proto_hosxpv4_proto_msgTypes,
 	}.Build()
-	File_proto_hosxpv3_proto = out.File
-	file_proto_hosxpv3_proto_rawDesc = nil
-	file_proto_hosxpv3_proto_goTypes = nil
-	file_proto_hosxpv3_proto_depIdxs = nil
+	File_proto_hosxpv4_proto = out.File
+	file_proto_hosxpv4_proto_rawDesc = nil
+	file_proto_hosxpv4_proto_goTypes = nil
+	file_proto_hosxpv4_proto_depIdxs = nil
 }

@@ -72,7 +72,9 @@ func main() {
 
 	app := fiber.New()
 	app.Use(logger.New())
-
+	app.Get("/", func(c *fiber.Ctx) error {
+		return c.SendString("Hello, World!")
+	})
 	api := app.Group("api")
 	api.Post("/v1/login", user.Login)
 	app.Use(jwtware.New(jwtware.Config{
@@ -219,5 +221,5 @@ func main() {
 
 	})
 
-	log.Fatal(app.Listen(":3003"))
+	log.Fatal(app.Listen(":80"))
 }
