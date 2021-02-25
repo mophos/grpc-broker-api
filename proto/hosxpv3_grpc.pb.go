@@ -21,6 +21,11 @@ type EmrServiceClient interface {
 	PatientInfo(ctx context.Context, in *RequestCid, opts ...grpc.CallOption) (*InfoResponse, error)
 	GetServices(ctx context.Context, in *RequestCid, opts ...grpc.CallOption) (*ServiceResponse, error)
 	GetScreening(ctx context.Context, in *RequestPatient, opts ...grpc.CallOption) (*ScreeningResponse, error)
+	GetDiagnosis(ctx context.Context, in *RequestPatient, opts ...grpc.CallOption) (*DiagnosisResponse, error)
+	GetProcedure(ctx context.Context, in *RequestPatient, opts ...grpc.CallOption) (*ProcedureResponse, error)
+	GetLab(ctx context.Context, in *RequestPatient, opts ...grpc.CallOption) (*LabResponse, error)
+	GetVaccine(ctx context.Context, in *RequestPatient, opts ...grpc.CallOption) (*VaccineResponse, error)
+	GetDrug(ctx context.Context, in *RequestPatient, opts ...grpc.CallOption) (*DrugResponse, error)
 }
 
 type emrServiceClient struct {
@@ -58,6 +63,51 @@ func (c *emrServiceClient) GetScreening(ctx context.Context, in *RequestPatient,
 	return out, nil
 }
 
+func (c *emrServiceClient) GetDiagnosis(ctx context.Context, in *RequestPatient, opts ...grpc.CallOption) (*DiagnosisResponse, error) {
+	out := new(DiagnosisResponse)
+	err := c.cc.Invoke(ctx, "/proto.EmrService/GetDiagnosis", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *emrServiceClient) GetProcedure(ctx context.Context, in *RequestPatient, opts ...grpc.CallOption) (*ProcedureResponse, error) {
+	out := new(ProcedureResponse)
+	err := c.cc.Invoke(ctx, "/proto.EmrService/GetProcedure", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *emrServiceClient) GetLab(ctx context.Context, in *RequestPatient, opts ...grpc.CallOption) (*LabResponse, error) {
+	out := new(LabResponse)
+	err := c.cc.Invoke(ctx, "/proto.EmrService/GetLab", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *emrServiceClient) GetVaccine(ctx context.Context, in *RequestPatient, opts ...grpc.CallOption) (*VaccineResponse, error) {
+	out := new(VaccineResponse)
+	err := c.cc.Invoke(ctx, "/proto.EmrService/GetVaccine", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *emrServiceClient) GetDrug(ctx context.Context, in *RequestPatient, opts ...grpc.CallOption) (*DrugResponse, error) {
+	out := new(DrugResponse)
+	err := c.cc.Invoke(ctx, "/proto.EmrService/GetDrug", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // EmrServiceServer is the server API for EmrService service.
 // All implementations must embed UnimplementedEmrServiceServer
 // for forward compatibility
@@ -65,6 +115,11 @@ type EmrServiceServer interface {
 	PatientInfo(context.Context, *RequestCid) (*InfoResponse, error)
 	GetServices(context.Context, *RequestCid) (*ServiceResponse, error)
 	GetScreening(context.Context, *RequestPatient) (*ScreeningResponse, error)
+	GetDiagnosis(context.Context, *RequestPatient) (*DiagnosisResponse, error)
+	GetProcedure(context.Context, *RequestPatient) (*ProcedureResponse, error)
+	GetLab(context.Context, *RequestPatient) (*LabResponse, error)
+	GetVaccine(context.Context, *RequestPatient) (*VaccineResponse, error)
+	GetDrug(context.Context, *RequestPatient) (*DrugResponse, error)
 	mustEmbedUnimplementedEmrServiceServer()
 }
 
@@ -80,6 +135,21 @@ func (UnimplementedEmrServiceServer) GetServices(context.Context, *RequestCid) (
 }
 func (UnimplementedEmrServiceServer) GetScreening(context.Context, *RequestPatient) (*ScreeningResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetScreening not implemented")
+}
+func (UnimplementedEmrServiceServer) GetDiagnosis(context.Context, *RequestPatient) (*DiagnosisResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetDiagnosis not implemented")
+}
+func (UnimplementedEmrServiceServer) GetProcedure(context.Context, *RequestPatient) (*ProcedureResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetProcedure not implemented")
+}
+func (UnimplementedEmrServiceServer) GetLab(context.Context, *RequestPatient) (*LabResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetLab not implemented")
+}
+func (UnimplementedEmrServiceServer) GetVaccine(context.Context, *RequestPatient) (*VaccineResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetVaccine not implemented")
+}
+func (UnimplementedEmrServiceServer) GetDrug(context.Context, *RequestPatient) (*DrugResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetDrug not implemented")
 }
 func (UnimplementedEmrServiceServer) mustEmbedUnimplementedEmrServiceServer() {}
 
@@ -148,6 +218,96 @@ func _EmrService_GetScreening_Handler(srv interface{}, ctx context.Context, dec 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _EmrService_GetDiagnosis_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RequestPatient)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmrServiceServer).GetDiagnosis(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.EmrService/GetDiagnosis",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmrServiceServer).GetDiagnosis(ctx, req.(*RequestPatient))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmrService_GetProcedure_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RequestPatient)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmrServiceServer).GetProcedure(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.EmrService/GetProcedure",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmrServiceServer).GetProcedure(ctx, req.(*RequestPatient))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmrService_GetLab_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RequestPatient)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmrServiceServer).GetLab(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.EmrService/GetLab",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmrServiceServer).GetLab(ctx, req.(*RequestPatient))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmrService_GetVaccine_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RequestPatient)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmrServiceServer).GetVaccine(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.EmrService/GetVaccine",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmrServiceServer).GetVaccine(ctx, req.(*RequestPatient))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _EmrService_GetDrug_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RequestPatient)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EmrServiceServer).GetDrug(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.EmrService/GetDrug",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EmrServiceServer).GetDrug(ctx, req.(*RequestPatient))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // EmrService_ServiceDesc is the grpc.ServiceDesc for EmrService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -167,9 +327,29 @@ var EmrService_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "GetScreening",
 			Handler:    _EmrService_GetScreening_Handler,
 		},
+		{
+			MethodName: "GetDiagnosis",
+			Handler:    _EmrService_GetDiagnosis_Handler,
+		},
+		{
+			MethodName: "GetProcedure",
+			Handler:    _EmrService_GetProcedure_Handler,
+		},
+		{
+			MethodName: "GetLab",
+			Handler:    _EmrService_GetLab_Handler,
+		},
+		{
+			MethodName: "GetVaccine",
+			Handler:    _EmrService_GetVaccine_Handler,
+		},
+		{
+			MethodName: "GetDrug",
+			Handler:    _EmrService_GetDrug_Handler,
+		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "proto/hosxp.proto",
+	Metadata: "proto/hosxpv3.proto",
 }
 
 // MasterServiceClient is the client API for MasterService service.
@@ -291,5 +471,5 @@ var MasterService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "proto/hosxp.proto",
+	Metadata: "proto/hosxpv3.proto",
 }

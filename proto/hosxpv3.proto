@@ -5,7 +5,13 @@ option go_package = "./proto";
 service EmrService {
   rpc PatientInfo(RequestCid) returns (InfoResponse) {}
   rpc GetServices(RequestCid) returns (ServiceResponse) {}
+  
   rpc GetScreening(RequestPatient) returns (ScreeningResponse) {}
+  rpc GetDiagnosis(RequestPatient) returns (DiagnosisResponse) {}
+  rpc GetProcedure(RequestPatient) returns (ProcedureResponse) {}
+  rpc GetLab(RequestPatient) returns (LabResponse) {}
+  rpc GetVaccine(RequestPatient) returns (VaccineResponse) {}
+  rpc GetDrug(RequestPatient) returns (DrugResponse) {}
 }
 
 service MasterService {
@@ -106,3 +112,62 @@ message ScreeningResponse {
   repeated Screening Results = 2;
 }
 
+message ProcedureResponse {
+  message Procedure {
+    string gw_record_id = 1;
+    string gw_hospcode = 2;
+    string hn = 3;
+    string vn = 4;
+    string vstdate = 5;
+    string vsttime = 6;
+    string hospname = 7;
+    string diagename = 8;
+    string diagtname = 9;
+  }
+  repeated Procedure Results = 2;
+}
+
+message LabResponse {
+  message Lab {
+    string gw_record_id = 1;
+    string gw_hospcode = 2;
+    string hn = 3;
+    string vn = 4;
+    string lab_items_code = 5;
+    string lab_items_name_ref = 6;
+    string lab_items_normal_value_ref = 7;
+    string hospname = 8;
+    string lab_items_name = 9;
+    string lab_items_unit = 10;
+    string lab_items_normal_value = 11;
+  }
+  repeated Lab Results = 2;
+}
+
+message VaccineResponse {
+  message Vaccine {
+    string gw_record_id = 1;
+    string gw_hospcode = 2;
+    string hn = 3;
+    string vn = 4;
+    string vaccine_note = 5;
+    string abnormal_note = 6;
+  }
+  repeated Vaccine Results = 2;
+}
+
+message DrugResponse {
+  message Drug {
+    string gw_record_id = 1;
+    string gw_hospcode = 2;
+    string hn = 3;
+    string vn = 4;
+    string icode = 5;
+    string qty = 6;
+    string unitprice = 7;
+    string vstdate = 8;
+    string vsttime = 9;
+    string hospname = 10;
+  }
+  repeated Drug Results = 2;
+}
