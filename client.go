@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"log"
+	"os"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/logger"
@@ -12,7 +13,10 @@ import (
 
 func main() {
 	//hosxpv3
-	connHosxpv3, err := grpc.Dial("localhost:4042", grpc.WithInsecure())
+	urlHosxpv3 := os.Getenv("URL_HOSXPV3")
+	urlHosxpv4 := os.Getenv("URL_HOSXPV4")
+	urlHosxppcu := os.Getenv("URL_HOSXPPCU")
+	connHosxpv3, err := grpc.Dial(urlHosxpv3, grpc.WithInsecure())
 	if err != nil {
 		panic(err)
 	}
@@ -20,7 +24,7 @@ func main() {
 	clientMasterHosxpv3 := proto.NewMasterServiceClient(connHosxpv3)
 
 	//hosxpv4
-	connHosxpv4, err := grpc.Dial("localhost:4043", grpc.WithInsecure())
+	connHosxpv4, err := grpc.Dial(urlHosxpv4, grpc.WithInsecure())
 	if err != nil {
 		panic(err)
 	}
@@ -28,7 +32,7 @@ func main() {
 	clientMasterHosxpv4 := proto.NewMasterServiceClient(connHosxpv4)
 
 	//hosxppcu
-	connHosxppcu, err := grpc.Dial("localhost:4044", grpc.WithInsecure())
+	connHosxppcu, err := grpc.Dial(urlHosxppcu, grpc.WithInsecure())
 	if err != nil {
 		panic(err)
 	}
@@ -90,8 +94,10 @@ func main() {
 		if err3 != nil {
 			log.Fatalf("open stream error %v", err2)
 		}
+
 		data := append(res.Results, res2.Results...)
 		data = append(data, res3.Results...)
+
 		return c.Status(fiber.StatusOK).JSON(fiber.Map{
 			"results": data,
 		})
