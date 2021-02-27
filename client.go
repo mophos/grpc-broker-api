@@ -13,7 +13,9 @@ import (
 	"github.com/jinzhu/gorm"
 	"github.com/joho/godotenv"
 	"github.com/mophos/grpc-broker-api/database"
-	"github.com/mophos/grpc-broker-api/proto"
+
+	// "github.com/mophos/grpc-broker-api/proto"
+	proto "github.com/moph-gateway/his-proto/proto"
 	"github.com/mophos/grpc-broker-api/user"
 	"google.golang.org/grpc"
 )
@@ -34,7 +36,7 @@ func initDatabase() {
 }
 
 func main() {
-	err := godotenv.Load(".env")
+	err := godotenv.Load("conf.env")
 	if err != nil {
 		fmt.Println("Error loading .env file")
 	}
@@ -395,6 +397,6 @@ func main() {
 		// })
 
 	})
-
-	log.Fatal(app.Listen(":80"))
+	port := os.Getenv("PORT")
+	log.Fatal(app.Listen(fmt.Sprintf("0.0.0.0:%s", port)))
 }
