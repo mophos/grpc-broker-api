@@ -193,7 +193,7 @@ func main() {
 		hn := c.FormValue("hn")
 		vn := c.FormValue("vn")
 
-		req := &proto.RequestPatient{Hospcode: hospcode, Hn: hn, Vn: vn}
+		req := &proto.RequestVisit{Hospcode: hospcode, Hn: hn, Vn: vn}
 
 		res, err := clientEmrHosxpv3.GetScreening(context.Background(), req)
 		if err != nil {
@@ -228,7 +228,7 @@ func main() {
 		hn := c.FormValue("hn")
 		vn := c.FormValue("vn")
 
-		req := &proto.RequestPatient{Hospcode: hospcode, Hn: hn, Vn: vn}
+		req := &proto.RequestVisit{Hospcode: hospcode, Hn: hn, Vn: vn}
 
 		res, err := clientEmrHosxpv3.GetDiagnosis(context.Background(), req)
 		if err != nil {
@@ -263,7 +263,7 @@ func main() {
 		hn := c.FormValue("hn")
 		vn := c.FormValue("vn")
 
-		req := &proto.RequestPatient{Hospcode: hospcode, Hn: hn, Vn: vn}
+		req := &proto.RequestVisit{Hospcode: hospcode, Hn: hn, Vn: vn}
 
 		res, err := clientEmrHosxpv3.GetProcedure(context.Background(), req)
 		if err != nil {
@@ -298,7 +298,7 @@ func main() {
 		hn := c.FormValue("hn")
 		vn := c.FormValue("vn")
 
-		req := &proto.RequestPatient{Hospcode: hospcode, Hn: hn, Vn: vn}
+		req := &proto.RequestVisit{Hospcode: hospcode, Hn: hn, Vn: vn}
 
 		res, err := clientEmrHosxpv3.GetLab(context.Background(), req)
 		if err != nil {
@@ -333,7 +333,7 @@ func main() {
 		hn := c.FormValue("hn")
 		vn := c.FormValue("vn")
 
-		req := &proto.RequestPatient{Hospcode: hospcode, Hn: hn, Vn: vn}
+		req := &proto.RequestVisit{Hospcode: hospcode, Hn: hn, Vn: vn}
 
 		res, err := clientEmrHosxpv3.GetVaccine(context.Background(), req)
 		if err != nil {
@@ -368,7 +368,7 @@ func main() {
 		hn := c.FormValue("hn")
 		vn := c.FormValue("vn")
 
-		req := &proto.RequestPatient{Hospcode: hospcode, Hn: hn, Vn: vn}
+		req := &proto.RequestVisit{Hospcode: hospcode, Hn: hn, Vn: vn}
 
 		res, err := clientEmrHosxpv3.GetDrug(context.Background(), req)
 		if err != nil {
