@@ -9,7 +9,7 @@ require (
 	github.com/golang/protobuf v1.4.3
 	github.com/jinzhu/gorm v1.9.16
 	github.com/joho/godotenv v1.3.0
-	github.com/moph-gateway/his-proto/proto v0.0.0-20210228171622-d5c5d7ba96a6
+	github.com/moph-gateway/his-proto/proto v0.0.0-20210301073926-3da605a15b83
 	golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9
 	google.golang.org/grpc v1.36.0
 	google.golang.org/protobuf v1.25.0
