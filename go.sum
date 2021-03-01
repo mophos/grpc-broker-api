@@ -60,6 +60,8 @@ github.com/moph-gateway/his-proto/proto v0.0.0-20210228171622-d5c5d7ba96a6 h1:s6
 github.com/moph-gateway/his-proto/proto v0.0.0-20210228171622-d5c5d7ba96a6/go.mod h1:vkBOLSaKXcaOSiHK/uGnaJu1GJZ+fv5u1vEUrScCUaU=
 github.com/moph-gateway/his-proto/proto v0.0.0-20210301073926-3da605a15b83 h1:yTxgdE29GhKzRVMpBlIO6iKOMCFsrEMl1TzSYEOhJzA=
 github.com/moph-gateway/his-proto/proto v0.0.0-20210301073926-3da605a15b83/go.mod h1:vkBOLSaKXcaOSiHK/uGnaJu1GJZ+fv5u1vEUrScCUaU=
+github.com/moph-gateway/his-proto/proto v0.0.0-20210301080643-3117e22c0431 h1:ft/iIkgALF5lWaNgWj/cCwHYm5NX9aTcklfJIKZMWLU=
+github.com/moph-gateway/his-proto/proto v0.0.0-20210301080643-3117e22c0431/go.mod h1:vkBOLSaKXcaOSiHK/uGnaJu1GJZ+fv5u1vEUrScCUaU=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/prometheus/client_model v0.0.0-20190812154241-14fe0d1b01d4/go.mod h1:xMI15A0UPsDsEKsMN9yxemIoYk6Tm2C1GtYGdfGttqA=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
