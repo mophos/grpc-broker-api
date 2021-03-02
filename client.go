@@ -425,7 +425,7 @@ func main() {
 
 	api.Post("/v1/appointment/dateserve", func(c *fiber.Ctx) error {
 		dateserve := c.FormValue("dateserve")
-		req := &proto.RequestDateServe{DateServe: dateserve}
+		req := &proto.RequestDateServe{Dateserve: dateserve}
 
 		res, err := clientMHealthHosxpv3.GetAppointmentDateserve(context.Background(), req)
 		if err != nil {
