@@ -5,7 +5,7 @@ RUN mkdir /build
 ADD . /build/
 WORKDIR /build
 RUN go get -d -v
-RUN go get github.com/moph-gateway/his-proto
+RUN go get github.com/moph-gateway/his-proto/proto
 RUN go build -o rest-grpc .
 # Stage 2
 FROM alpine

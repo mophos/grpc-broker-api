@@ -12,10 +12,8 @@ import (
 	jwtware "github.com/gofiber/jwt/v2"
 	"github.com/jinzhu/gorm"
 	"github.com/joho/godotenv"
+	proto "github.com/moph-gateway/his-proto"
 	"github.com/mophos/grpc-broker-api/database"
-
-	// "github.com/mophos/grpc-broker-api/proto"
-	proto "github.com/moph-gateway/his-proto/proto"
 	"github.com/mophos/grpc-broker-api/user"
 	"google.golang.org/grpc"
 )
