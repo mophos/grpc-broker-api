@@ -111,7 +111,6 @@ func main() {
 		cid := c.FormValue("cid")
 
 		req := &proto.RequestCid{Cid: cid}
-
 		if res, err := clientEmrHosxpv3.GetServices(context.Background(), req); err == nil {
 			return c.Status(fiber.StatusOK).JSON(fiber.Map{
 				"results": res.Results,
@@ -150,12 +149,10 @@ func main() {
 		hospcode := c.FormValue("hospcode")
 
 		req := &proto.RequestHospcode{Hospcode: hospcode}
-
 		res, err := clientMasterHosxpv3.DoctorList(context.Background(), req)
 		if err != nil {
 			log.Fatalf("open stream error %v", err)
 		}
-
 		res2, err2 := clientMasterHosxpv4.DoctorList(context.Background(), req)
 		if err2 != nil {
 			log.Fatalf("open stream error %v", err2)
@@ -168,7 +165,6 @@ func main() {
 
 		data := append(res.Results, res2.Results...)
 		data = append(data, res3.Results...)
-
 		return c.Status(fiber.StatusOK).JSON(fiber.Map{
 			"results": data,
 		})
@@ -215,35 +211,57 @@ func main() {
 		hospcode := c.FormValue("hospcode")
 		hn := c.FormValue("hn")
 		vn := c.FormValue("vn")
-
+		hisName := c.FormValue("hisName")
 		req := &proto.RequestVisit{Hospcode: hospcode, Hn: hn, Vn: vn}
 
-		res, err := clientEmrHosxpv3.GetScreening(context.Background(), req)
-		if err != nil {
-			log.Fatalf("open stream error %v", err)
+		if hisName == "hosxpv3" {
+			res, err := clientEmrHosxpv3.GetScreening(context.Background(), req)
+			if err != nil {
+				log.Fatalf("open stream error %v", err)
+				return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+					"ok":    false,
+					"error": err.Error(),
+				})
+			} else {
+				return c.Status(fiber.StatusOK).JSON(fiber.Map{
+					"ok":      true,
+					"results": res.Results,
+				})
+			}
+		} else if hisName == "hosxpv4" {
+			res, err := clientEmrHosxpv4.GetScreening(context.Background(), req)
+			if err != nil {
+				log.Fatalf("open stream error %v", err)
+				return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+					"ok":    false,
+					"error": err.Error(),
+				})
+			} else {
+				return c.Status(fiber.StatusOK).JSON(fiber.Map{
+					"ok":      true,
+					"results": res.Results,
+				})
+			}
+		} else if hisName == "hosxp_pcu" {
+			res, err := clientEmrHosxppcu.GetScreening(context.Background(), req)
+			if err != nil {
+				log.Fatalf("open stream error %v", err)
+				return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+					"ok":    false,
+					"error": err.Error(),
+				})
+			} else {
+				return c.Status(fiber.StatusOK).JSON(fiber.Map{
+					"ok":      true,
+					"results": res.Results,
+				})
+			}
+		} else {
+			return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
+				"ok":    false,
+				"error": "hisName ไม่ถูกต้อง",
+			})
 		}
-
-		res2, err2 := clientEmrHosxpv4.GetScreening(context.Background(), req)
-		if err2 != nil {
-			log.Fatalf("open stream error %v", err2)
-		}
-
-		res3, err3 := clientEmrHosxppcu.GetScreening(context.Background(), req)
-		if err3 != nil {
-			log.Fatalf("open stream error %v", err2)
-		}
-
-		data := append(res.Results, res2.Results...)
-		data = append(data, res3.Results...)
-
-		return c.Status(fiber.StatusOK).JSON(fiber.Map{
-			"results": data,
-		})
-
-		// return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{
-		// 	"error": err.Error(),
-		// })
-
 	})
 
 	api.Post("/v1/diagnosis", func(c *fiber.Ctx) error {
